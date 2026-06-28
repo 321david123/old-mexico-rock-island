@@ -1,0 +1,8 @@
+_research/
+dossier.json
+.DS_Store
+.claude/
+_qa*.html
+_qiso.html
+*.log
+serve.js
