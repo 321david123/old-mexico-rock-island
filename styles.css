@@ -207,6 +207,11 @@ a:focus-visible, button:focus-visible {
 .nav__toggle span { width: 26px; height: 2px; background: var(--cream); transition: background .4s, transform .4s var(--ease), opacity .3s; }
 .nav.is-solid .nav__toggle span { background: var(--terracotta); }
 
+/* Language toggle in the nav: follow the nav colour state (light over hero, dark when solid) */
+.nav .lang-toggle { color: var(--cream); text-shadow: 0 1px 8px rgba(0,0,0,.35); opacity: .9; }
+.nav.is-solid .lang-toggle { color: var(--ink); text-shadow: none; }
+.nav .lang-toggle span { text-shadow: none; }
+
 /* =========================================================
    OVERLAY (mobile)
    ========================================================= */

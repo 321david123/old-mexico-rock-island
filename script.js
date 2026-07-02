@@ -94,12 +94,14 @@
 
   /* ---------- Nav: solid on scroll ---------- */
   var nav = document.getElementById("nav");
-  function onScroll() {
-    if (window.scrollY > 60) { nav.classList.add("is-solid"); }
-    else { nav.classList.remove("is-solid"); }
+  if (nav) {
+    var onScroll = function () {
+      if (window.scrollY > 60) { nav.classList.add("is-solid"); }
+      else { nav.classList.remove("is-solid"); }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
   }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
 
   /* ---------- Mobile overlay ---------- */
   var toggle = document.getElementById("navToggle");
@@ -107,25 +109,29 @@
   var overlayClose = document.getElementById("overlayClose");
 
   function openOverlay() {
+    if (!overlay) return;
     overlay.classList.add("is-open");
-    toggle.setAttribute("aria-expanded", "true");
+    if (toggle) toggle.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
     if (lenis) lenis.stop();
   }
   function closeOverlay() {
+    if (!overlay) return;
     overlay.classList.remove("is-open");
-    toggle.setAttribute("aria-expanded", "false");
+    if (toggle) toggle.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
     if (lenis) lenis.start();
   }
   if (toggle) toggle.addEventListener("click", openOverlay);
   if (overlayClose) overlayClose.addEventListener("click", closeOverlay);
-  overlay.querySelectorAll("a").forEach(function (a) {
-    a.addEventListener("click", closeOverlay);
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && overlay.classList.contains("is-open")) closeOverlay();
-  });
+  if (overlay) {
+    overlay.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", closeOverlay);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && overlay.classList.contains("is-open")) closeOverlay();
+    });
+  }
 
   /* ---------- Smooth anchor scroll via Lenis ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
@@ -158,36 +164,55 @@
     });
   });
 
-  /* ---------- Highlight "open now" in hours ---------- */
-  (function highlightHours() {
-    var rows = document.querySelectorAll("#hours tr");
+  /* ---------- Highlight today's row ONLY when actually open now ---------- */
+  (function () {
+    var rows = document.querySelectorAll("#hours tbody tr");
     if (!rows.length) return;
-    var now = new Date();
-    var day = now.getDay(); // 0 Sun .. 6 Sat
-    var hour = now.getHours();
-    // Mon(0)..Sun(6) row order in table
-    var rowIndex = day === 0 ? 6 : day - 1;
-    var open = day !== 0 && hour >= 11 && hour < 21;
-    if (open && rows[rowIndex]) rows[rowIndex].classList.add("is-now");
+    // open/close in minutes from midnight, matching THIS site's hours table.
+    // Mon–Sat 11:00 AM – 9:00 PM; Sunday closed (no entry). close > 1440 = past midnight.
+    var HRS = {
+      1: { o: 660, c: 1260 },  // Mon 11:00 AM – 9:00 PM
+      2: { o: 660, c: 1260 },  // Tue 11:00 AM – 9:00 PM
+      3: { o: 660, c: 1260 },  // Wed 11:00 AM – 9:00 PM
+      4: { o: 660, c: 1260 },  // Thu 11:00 AM – 9:00 PM
+      5: { o: 660, c: 1260 },  // Fri 11:00 AM – 9:00 PM
+      6: { o: 660, c: 1260 }   // Sat 11:00 AM – 9:00 PM
+      // Sunday (0) intentionally absent — closed, never highlighted
+    };
+    var d = new Date();
+    var day = d.getDay();                          // 0 Sun .. 6 Sat
+    var now = d.getHours() * 60 + d.getMinutes();
+    var open = false;
+    var t = HRS[day];
+    if (t && now >= t.o && now < Math.min(t.c, 1440)) open = true;   // today's shift, up to midnight
+    var yt = HRS[(day + 6) % 7];                                     // yesterday
+    if (yt && yt.c > 1440 && now < (yt.c - 1440)) open = true;       // still open from last night's late shift
+    if (!open) return;                                              // closed → no highlight, no "Open now"
+    var rowIndex = day === 0 ? 6 : day - 1;        // table order: Mon..Sun (rows[0]=Mon)
+    if (rows[rowIndex]) rows[rowIndex].classList.add("is-now");
   })();
 
   /* ---------- Swiper: Gallery ---------- */
   if (window.Swiper) {
-    new Swiper(".gallery__swiper", {
-      slidesPerView: "auto",
-      spaceBetween: 18,
-      grabCursor: true,
-      navigation: { prevEl: ".gallery__btn--prev", nextEl: ".gallery__btn--next" },
-      breakpoints: { 760: { spaceBetween: 28 } }
-    });
+    if (document.querySelector(".gallery__swiper")) {
+      new Swiper(".gallery__swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 18,
+        grabCursor: true,
+        navigation: { prevEl: ".gallery__btn--prev", nextEl: ".gallery__btn--next" },
+        breakpoints: { 760: { spaceBetween: 28 } }
+      });
+    }
 
-    new Swiper(".reviews__swiper", {
-      slidesPerView: 1,
-      loop: true,
-      autoplay: { delay: 5500, disableOnInteraction: false },
-      pagination: { el: ".reviews__dots", clickable: true },
-      effect: "fade",
-      fadeEffect: { crossFade: true }
-    });
+    if (document.querySelector(".reviews__swiper")) {
+      new Swiper(".reviews__swiper", {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: { delay: 5500, disableOnInteraction: false },
+        pagination: { el: ".reviews__dots", clickable: true },
+        effect: "fade",
+        fadeEffect: { crossFade: true }
+      });
+    }
   }
 })();

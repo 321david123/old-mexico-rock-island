@@ -114,6 +114,8 @@
         <a href="https://www.clover.com/online-ordering/oldmex" target="_blank" rel="noopener" class="btn btn--solid">Order Online</a>
       </div>
 
+      <button id="langToggle" class="lang-toggle" type="button" aria-label="Language / Idioma" title="English / Español"><span data-l="en">EN</span><span data-l="es">ES</span></button>
+
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="overlay">
         <span></span><span></span><span></span>
       </button>
@@ -153,7 +155,7 @@
           <span class="line accent" data-hero-line>Mexico</span>
         </h1>
         <div class="hero__rule" id="heroRule"></div>
-        <p class="hero__tagline" data-reveal>Authentic, family-made Mexican in the heart of Rock Island —<br />quesabirria, tamales, and a table that's always generous.</p>
+        <p class="hero__tagline" data-reveal data-i18n="0">Authentic, family-made Mexican in the heart of Rock Island —<br />quesabirria, tamales, and a table that's always generous.</p>
         <div class="hero__cta" data-reveal>
           <a href="https://www.clover.com/online-ordering/oldmex" target="_blank" rel="noopener" class="btn btn--gold btn--lg">Order Online</a>
           <a href="#menu" class="btn btn--ghost btn--lg">View the Menu</a>
@@ -179,10 +181,10 @@
       <div class="story__grid">
         <div class="story__text">
           <p class="kicker" data-reveal>Who We Are</p>
-          <h2 class="story__head" data-reveal>
+          <h2 class="story__head" data-reveal data-i18n="1">
             A family kitchen<br />on <em>45th Street.</em>
           </h2>
-          <p data-reveal>
+          <p data-reveal data-i18n="2">
             Old Mexico is a family-run, neighborhood Mexican kitchen serving recipes passed
             down through the family. Step inside and you'll find a cozy dining room beneath a
             vintage <em>pressed-tin ceiling</em> — the kind of room that's been welcoming
@@ -238,7 +240,7 @@
           <img src="assets/quesabirria.jpg" alt="Quesabirria tacos — slow-braised birria in corn tortillas with onion and cilantro, served with consomé for dipping" data-parallax loading="lazy" decoding="async" width="1200" height="779" />
         </figure>
         <div class="sig__body">
-          <span class="sig__index"><b>01</b> / The Standout</span>
+          <span class="sig__index" data-i18n="3"><b>01</b> / The Standout</span>
           <h3 class="sig__title" data-letters>Quesabirria Tacos</h3>
           <p class="sig__desc">Slow-braised birria tucked into griddled tortillas with onion and cilantro —
             and a cup of rich, flavorful consomé for dipping. As one guest put it, "the meat was tender
@@ -253,7 +255,7 @@
           <img src="assets/tacos-asada.jpg" alt="Carne asada street tacos on warm corn tortillas, piled with white onion, cilantro and a squeeze of lime" data-parallax loading="lazy" decoding="async" width="1200" height="675" />
         </figure>
         <div class="sig__body">
-          <span class="sig__index"><b>02</b> / Street Style</span>
+          <span class="sig__index" data-i18n="4"><b>02</b> / Street Style</span>
           <h3 class="sig__title" data-letters>Carne Asada Tacos</h3>
           <p class="sig__price">Corn or flour, 3 for $4.50</p>
           <p class="sig__desc">Marinated steak griddled and chopped, piled onto warm tortillas with fresh white
@@ -268,7 +270,7 @@
           <img src="assets/burrito.jpg" alt="A massive Burrito Grande sliced open, stuffed with meat and topped with melted and cotija cheese" data-parallax loading="lazy" decoding="async" width="1200" height="900" />
         </figure>
         <div class="sig__body">
-          <span class="sig__index"><b>03</b> / Big &amp; Filling</span>
+          <span class="sig__index" data-i18n="5"><b>03</b> / Big &amp; Filling</span>
           <h3 class="sig__title" data-letters>Burrito Grande</h3>
           <p class="sig__price">$6 · with Carne Asada $7</p>
           <p class="sig__desc">An overstuffed flour burrito loaded and finished with cheese — a Quad Cities-sized
@@ -283,7 +285,7 @@
           <img src="assets/enchiladas.jpg" alt="A plate of red enchiladas dusted with cotija cheese, served with Mexican rice, refried beans and a fresh salad" data-parallax loading="lazy" decoding="async" width="1200" height="900" />
         </figure>
         <div class="sig__body">
-          <span class="sig__index"><b>04</b> / House Classic</span>
+          <span class="sig__index" data-i18n="6"><b>04</b> / House Classic</span>
           <h3 class="sig__title" data-letters>Enchiladas</h3>
           <p class="sig__price">From $6 · choice of fillings</p>
           <p class="sig__desc">Three rolled tortillas under house sauce, dusted with cotija and plated with
@@ -298,7 +300,7 @@
           <img src="assets/pastor.jpg" alt="Marinated tacos on a wooden board with lime wedges and a cold tamarind Jarritos on Talavera tile" data-parallax loading="lazy" decoding="async" width="1200" height="800" />
         </figure>
         <div class="sig__body">
-          <span class="sig__index"><b>05</b> / All Day</span>
+          <span class="sig__index" data-i18n="7"><b>05</b> / All Day</span>
           <h3 class="sig__title" data-letters>Tamales &amp; Jarritos</h3>
           <p class="sig__price">Tamales 3 for $4.50 · Jarritos $1.75</p>
           <p class="sig__desc">Three hand-made pork tamales with salsa, plus an ice-cold Jarritos or horchata
@@ -448,10 +450,10 @@
             <div class="m-item"><div class="m-item__head"><span class="m-item__name">Onion Rings</span><span class="m-leader"></span><span class="m-item__price">$2.50</span></div></div>
 
             <h3 class="menu__group-title menu__group-title--sub">Kids Menu</h3>
-            <p class="m-item__desc m-item__desc--free"><strong>Choose one</strong> — Taco · Burrito · Enchilada (with rice &amp; bean), Tostada Kids Meal, or Taco Burger with Fries.</p>
+            <p class="m-item__desc m-item__desc--free" data-i18n="8"><strong>Choose one</strong> — Taco · Burrito · Enchilada (with rice &amp; bean), Tostada Kids Meal, or Taco Burger with Fries.</p>
           </div>
         </div>
-        <p class="menu__legend"><em class="m-tag">veg</em> vegetarian &nbsp;·&nbsp; Free chips &amp; salsa with every table</p>
+        <p class="menu__legend" data-i18n="9"><em class="m-tag">veg</em> vegetarian &nbsp;·&nbsp; Free chips &amp; salsa with every table</p>
       </div>
 
       <p class="menu__pricing-note" data-reveal>Menu and prices are based on the restaurant's most recent published listing and may have changed — please confirm current pricing when you order.</p>
@@ -674,5 +676,96 @@
 
   <!-- Visibility failsafe -->
   <script>setTimeout(function(){document.querySelectorAll(".reveal,[data-reveal]").forEach(function(e){e.classList.add("is-visible")});document.querySelectorAll("[data-hero-line],.hero__line,.hero__title .line>span").forEach(function(e){e.style.opacity="1";e.style.transform="none";e.style.visibility="visible"})},2200);</script>
+
+  <!-- ===== EN/ES language toggle ===== -->
+  <style id="i18n-style">
+    .lang-toggle{display:inline-flex;align-items:center;border:1.4px solid currentColor;border-radius:999px;overflow:hidden;background:transparent;cursor:pointer;padding:0;margin:0 .55rem 0 0;font-family:inherit;vertical-align:middle;opacity:.82;-webkit-tap-highlight-color:transparent;flex:0 0 auto}
+    .lang-toggle:hover{opacity:1}
+    .lang-toggle span{display:block;padding:.36em .56em;font-size:.68rem;font-weight:800;letter-spacing:.04em;color:currentColor;line-height:1;transition:background .15s,color .15s}
+    .lang-toggle span.on{background:#c1272d;color:#fff}
+    @media(max-width:600px){ .lang-toggle{margin-right:.5rem} .lang-toggle span{padding:.34em .48em;font-size:.66rem} }
+    html[lang="es"] .hours tr.is-now td::after{ content:" \00b7  Abierto ahora" !important; }
+  </style>
+  <script id="i18n-script">
+
+  (function(){
+    var TEXT = {"Story": "Historia", "Signatures": "Especialidades", "Menu": "Menú", "Gallery": "Galería", "Visit": "Visítanos", "Order Online": "Ordena en línea", "View the Menu": "Ver el menú", "Call (309) 788-7251": "Llama al (309) 788-7251", "Rock Island · Illinois": "Rock Island · Illinois", "Scroll": "Desliza", "Family Recipes": "Recetas de familia", "Who We Are": "Quiénes somos", "The kitchen is known for its quesabirria tacos with rich consomé for dipping,\n            daily pozole and menudo, hand-made tamales, and a breakfast of eggs and chorizo.\n            Service is fast and friendly, portions are generous, prices are unbeatable — and\n            the chips and salsa never stop coming.": "La cocina es famosa por sus tacos de quesabirria con un consomé rico para remojar,\n            pozole y menudo todos los días, tamales hechos a mano y un desayuno de huevos con chorizo.\n            El servicio es rápido y amable, las porciones son generosas, los precios son imbatibles — y\n            los totopos con salsa nunca dejan de llegar.", "Meet the signatures &rarr;": "Conoce las especialidades →", "Papel picado over the bar — the neighborhood's cantina.": "Papel picado sobre la barra — la cantina del barrio.", "Google rating": "Calificación en Google", "Google reviews": "Reseñas en Google", "Recommend on Facebook": "Recomiendan en Facebook", "Days a week, 11&ndash;9": "Días a la semana, 11–9", "The Signatures": "Las especialidades", "Dishes the regulars order.": "Los platillos que piden los clientes de siempre.", "Slow-braised birria tucked into griddled tortillas with onion and cilantro —\n            and a cup of rich, flavorful consomé for dipping. As one guest put it, \"the meat was tender\n            and the dipping juice was flavorful.\"": "Birria cocida a fuego lento en tortillas doradas al comal con cebolla y cilantro —\n            y una taza de consomé rico y sabroso para remojar. Como lo dijo un comensal: \"the meat was tender\n            and the dipping juice was flavorful.\"", "Corn or flour, 3 for $4.50": "Maíz o harina, 3 por $4.50", "Marinated steak griddled and chopped, piled onto warm tortillas with fresh white\n            onion, cilantro and lime. Simple, generous, and exactly how a street taco should taste.": "Bistec marinado asado al comal y picado, servido sobre tortillas calientes con cebolla\n            blanca fresca, cilantro y limón. Sencillo, generoso y con el sabor exacto de un taco callejero.", "An overstuffed flour burrito loaded and finished with cheese — a Quad Cities-sized\n            portion that's earned its name. Add carne asada and make it a meal you'll be thinking about tomorrow.": "Un burrito de harina rebosante, cargado y coronado con queso — una porción tamaño Quad\n            Cities que se ganó su nombre. Agrégale carne asada y conviértelo en una comida que recordarás mañana.", "Three rolled tortillas under house sauce, dusted with cotija and plated with\n            Mexican rice and refried beans. Order them red, suizas, or verdes — and don't skip the daily soup.": "Tres tortillas enrolladas bañadas en salsa de la casa, espolvoreadas con cotija y servidas\n            con arroz a la mexicana y frijoles refritos. Pídelas rojas, suizas o verdes — y no te saltes la sopa del día.", "Three hand-made pork tamales with salsa, plus an ice-cold Jarritos or horchata\n            to wash it all down. Honest, homemade, and the way a neighborhood spot should feel.": "Tres tamales de puerco hechos a mano con salsa, más un Jarritos bien frío o una horchata\n            para pasarlo todo. Honesto, casero y con el sabor de un rincón de barrio.", "See the taco menu &rarr;": "Ver el menú de tacos →", "See the traditionals &rarr;": "Ver los tradicionales →", "See the entrées &rarr;": "Ver los platos fuertes →", "See the full menu &rarr;": "Ver el menú completo →", "Real Prices · No Guesswork": "Precios reales · Sin adivinanzas", "The Menu": "El menú", "Generous portions, neighborhood prices, and free chips &amp; salsa with every\n          table. Dine in, carry out, or order online — daily specials run Monday through Saturday.": "Porciones generosas, precios de barrio y totopos con salsa gratis en cada\n          mesa. Come aquí, para llevar u ordena en línea — las promociones del día van de lunes a sábado.", "Favorites": "Favoritos", "Starters": "Entradas", "Entrées": "Platos fuertes", "Specials &amp; More": "Promociones y más", "Tacos": "Tacos", "Mexican Traditionals": "Tradicionales mexicanos", "3 soft tortillas, beef &amp; bean or chicken &amp; bean": "3 tortillas suaves, res con frijol o pollo con frijol", "With Carne Asada $7": "Con carne asada $7", "3 pork-filled, with salsa": "3 rellenos de puerco, con salsa", "With Carne Asada or Carnita $10": "Con carne asada o carnita $10", "Tostada Grande $5.75": "Tostada Grande $5.75", "Small / Medium / Large": "Chico / Mediano / Grande", "Soups &amp; Caldos": "Sopas y caldos", "Mexican meatball soup": "Sopa de albóndigas mexicana", "Chicken or beef with rice, onion &amp; lime": "Pollo o res con arroz, cebolla y limón", "Beverages": "Bebidas", "Pepsi varieties, tea, lemonade": "Variedades de Pepsi, té, limonada", "Appetizers": "Aperitivos", "Served in an edible shell": "Servido en una canasta comestible", "With extra chips": "Con totopos extra", "Chicken, taco meat, or cheese with sour cream &amp; guacamole": "Pollo, carne para taco o queso con crema y guacamole", "Half order $4": "Media orden $4", "6 beef-filled with guacamole &amp; sour cream": "6 rellenos de res con guacamole y crema", "More to Start": "Más para empezar", "With extra chips, cheese optional": "Con totopos extra, queso opcional", "6 pieces, cream cheese or cheddar": "6 piezas, queso crema o cheddar", "6 pieces": "6 piezas", "3 tortillas, choice of fillings": "3 tortillas, relleno a elegir", "Meatballs with chipotle sauce": "Albóndigas con salsa de chipotle", "Combo $12": "Combo $12", "From the Grill": "De la parrilla", "Daily Specials": "Promociones del día", "Monday": "Lunes", "Tuesday": "Martes", "Wednesday": "Miércoles", "Thursday": "Jueves", "Friday": "Viernes", "Saturday": "Sábado", "Sunday": "Domingo", "Bean Tostada $1.10 · Taco Salad $4.75 · Enchilada Suiza $5.50": "Tostada de frijol $1.10 · Ensalada de taco $4.75 · Enchilada suiza $5.50", "Potato &amp; Chorizo Enchilada $1.10 · Small Combo $3.25": "Enchilada de papa con chorizo $1.10 · Combo chico $3.25", "Hard Shell Beef Taco $1.10 · Beef Enchilada Plate $4.25": "Taco duro de res $1.10 · Plato de enchiladas de res $4.25", "Chicken Flautas $5.50 · Super Burrito $5.75": "Flautas de pollo $5.50 · Súper burrito $5.75", "Chicken Gorditas $1.15 · Enchilada Verdes $5.50": "Gorditas de pollo $1.15 · Enchiladas verdes $5.50", "Chicken Fajitas $6.50 · Large Combo $6": "Fajitas de pollo $6.50 · Combo grande $6", "Desserts": "Postres", "American Delights": "Antojos americanos", "Kids Menu": "Menú infantil", "Menu and prices are based on the restaurant's most recent published listing and may have changed — please confirm current pricing when you order.": "El menú y los precios se basan en la información publicada más reciente del restaurante y pueden haber cambiado — por favor confirma los precios vigentes al ordenar.", "Call to Order": "Llama para ordenar", "Inside Old Mexico": "Por dentro de Old Mexico", "A neighborhood in pictures.": "El barrio en imágenes.", "The Old Mexico Way": "El estilo Old Mexico", "Why folks keep coming back.": "Por qué la gente siempre regresa.", "Family-Owned": "Negocio familiar", "Authentic recipes passed down through the family, made fresh on 45th Street.": "Recetas auténticas heredadas de la familia, preparadas al momento en la 45th Street.", "Takeout &amp; Delivery": "Para llevar y a domicilio", "Order online through Clover, grab carry-out, or have it brought to your door.": "Ordena en línea por Clover, pasa por tu pedido o pídelo a tu puerta.", "Daily Pozole &amp; Menudo": "Pozole y menudo diario", "Pozole verde, menudo, albondigas and caldos simmered fresh every day.": "Pozole verde, menudo, albóndigas y caldos preparados frescos todos los días.", "Margaritas &amp; Sangria": "Margaritas y sangría", "Lemon margaritas, sangria, horchata and Jarritos to round out the table.": "Margaritas de limón, sangría, horchata y Jarritos para completar la mesa.", "Vegetarian Options": "Opciones vegetarianas", "Bean and cheese plates, veggie enchiladas, guac and more — meat-free and made to order.": "Platos de frijol y queso, enchiladas de verdura, guacamole y más — sin carne y hechos al momento.", "Easy to Find": "Fácil de encontrar", "610 45th St in Rock Island, with free parking and a friendly welcome.": "610 45th St en Rock Island, con estacionamiento gratis y una bienvenida amable.", "Word of Mouth": "De boca en boca", "What the regulars say.": "Lo que dicen los clientes de siempre.", "★★★★½ &nbsp;4.4 on Google · 660+ reviews · 94% recommend on Facebook": "★★★★½  4.4 en Google · 660+ reseñas · 94% recomiendan en Facebook", "Visit Us": "Visítanos", "Come on in.": "Pásale.", "Address": "Dirección", "Order &amp; Contact": "Ordena y contáctanos", "Order online via Clover": "Ordena en línea por Clover", "Hours": "Horario", "Closed": "Cerrado", "Get Directions": "Cómo llegar", "Authentic, family-made Mexican in the heart of Rock Island, Illinois.": "Comida mexicana auténtica y casera en el corazón de Rock Island, Illinois.", "Explore": "Explora", "Our Story": "Nuestra historia", "Mon&ndash;Sat · 11AM&ndash;9PM": "Lun–Sáb · 11AM–9PM", "Order &amp; Connect": "Ordena y conéctate", "Directions": "Cómo llegar", "© 2026 Old Mexico Restaurant. All Rights Reserved.": "© 2026 Old Mexico Restaurant. Todos los derechos reservados.", "Call": "Llamar", "Order": "Ordenar"};
+    var ATTR = {"Open menu": "Abrir menú", "Close menu": "Cerrar menú", "Scroll down": "Desliza hacia abajo", "Previous": "Anterior", "Next": "Siguiente"};
+    var HTML = {"0": "Comida mexicana auténtica y casera en el corazón de Rock Island —<br />quesabirria, tamales y una mesa siempre generosa.", "1": "Una cocina familiar<br />en la <em>45th Street.</em>", "2": "Old Mexico es una cocina mexicana de barrio, de manejo familiar, que sirve recetas\n            heredadas de generación en generación. Al entrar encontrarás un comedor acogedor bajo un\n            <em>techo de hojalata repujada</em> de época — el tipo de lugar que lleva años\n            recibiendo a los clientes de siempre de las Quad Cities.", "3": "<b>01</b> / La estrella", "4": "<b>02</b> / Estilo callejero", "5": "<b>03</b> / Grande y llenador", "6": "<b>04</b> / Clásico de la casa", "7": "<b>05</b> / Todo el día", "8": "<strong>Elige uno</strong> — Taco · Burrito · Enchilada (con arroz y frijol), Tostada Kids Meal o Taco Burger con papas.", "9": "<em class=\"m-tag\">veg</em> vegetariano &nbsp;·&nbsp; Totopos con salsa gratis en cada mesa"};
+    var KEY = "oldmexico_lang";
+    function dec(s){ try{ var e=document.createElement('textarea'); e.innerHTML=s; return e.value; }catch(_){ return String(s); } }
+    function norm(s){ return dec(String(s)).replace(/\s+/g,' ').trim(); }
+    var T={}, A={};
+    for(var k in TEXT){ if(TEXT.hasOwnProperty(k)){ var kk=norm(k); if(kk) T[kk]=TEXT[k]; } }
+    for(var k2 in ATTR){ if(ATTR.hasOwnProperty(k2)){ var na=norm(k2); if(na) A[na]=ATTR[k2]; } }
+    var lang='en';
+    try{
+      var up=new URLSearchParams(location.search).get('lang');
+      if(up==='es'||up==='en'){ lang=up; localStorage.setItem(KEY,up); }
+      else if(localStorage.getItem(KEY)==='es'){ lang='es'; }
+    }catch(_){ try{ if(localStorage.getItem(KEY)==='es') lang='es'; }catch(e){} }
+    var SKIP={SCRIPT:1,STYLE:1,NOSCRIPT:1,TEXTAREA:1,CODE:1};
+    var tnodes=[], anodes=[], hnodes=[];
+    var seen=(window.WeakSet)?new WeakSet():null;
+    var seenH=(window.WeakSet)?new WeakSet():null;
+    function nkey(v){ return v.replace(/\s+/g,' ').trim(); }
+    function scan(root){
+      if(!root||root.nodeType!==1) return;
+      var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null,false), n;
+      while(n=w.nextNode()){
+        var v=n.nodeValue; if(!v) continue; var key=nkey(v); if(!key) continue;
+        var p=n.parentNode; if(!p||SKIP[p.nodeName]) continue;
+        if(!T.hasOwnProperty(key)) continue;
+        if(seen){ if(seen.has(n)) continue; seen.add(n); }
+        tnodes.push({node:n,en:v,key:key});
+      }
+      var names=['placeholder','aria-label','title','alt'];
+      var els=root.querySelectorAll('[placeholder],[aria-label],[title],[alt]');
+      for(var i=0;i<els.length;i++){ var el=els[i];
+        for(var a=0;a<names.length;a++){ var nm=names[a]; if(!el.hasAttribute(nm)) continue;
+          var val=el.getAttribute(nm); var vk=val?nkey(val):''; if(!vk||!A.hasOwnProperty(vk)) continue;
+          anodes.push({el:el,attr:nm,en:val,key:vk});
+        }
+      }
+      var hs=root.querySelectorAll('[data-i18n]');
+      for(var h=0;h<hs.length;h++){ var he=hs[h];
+        if(seenH){ if(seenH.has(he)) continue; seenH.add(he); }
+        var id=he.getAttribute('data-i18n');
+        if(HTML.hasOwnProperty(id)) hnodes.push({el:he,en:he.innerHTML,k:id});
+      }
+    }
+    function repl(orig,es){ var m=orig.match(/^(\s*)([\s\S]*?)(\s*)$/); return m[1]+es+m[3]; }
+    function apply(){
+      for(var i=0;i<tnodes.length;i++){ var o=tnodes[i];
+        o.node.nodeValue=(lang==='es'&&T[o.key]!=null)?repl(o.en,T[o.key]):o.en; }
+      for(var j=0;j<anodes.length;j++){ var e=anodes[j];
+        e.el.setAttribute(e.attr,(lang==='es'&&A[e.key]!=null)?A[e.key]:e.en); }
+      for(var g=0;g<hnodes.length;g++){ var hn=hnodes[g];
+        var want=(lang==='es'&&HTML[hn.k]!=null)?HTML[hn.k]:hn.en;
+        if(hn.el.innerHTML!==want) hn.el.innerHTML=want; }
+      try{ document.documentElement.setAttribute('lang',lang); }catch(_){}
+      var b=document.getElementById('langToggle');
+      if(b){ var ss=b.querySelectorAll('[data-l]'); for(var q=0;q<ss.length;q++){ ss[q].classList.toggle('on',ss[q].getAttribute('data-l')===lang); } }
+    }
+    function setLang(l){ lang=(l==='es')?'es':'en'; try{localStorage.setItem(KEY,lang);}catch(_){}; apply(); }
+    function init(){
+      scan(document.body); apply();
+      var btn=document.getElementById('langToggle');
+      if(btn){ btn.addEventListener('click',function(ev){
+        var el=ev.target; while(el&&el!==btn&&!(el.getAttribute&&el.getAttribute('data-l'))) el=el.parentNode;
+        var l=(el&&el.getAttribute)?el.getAttribute('data-l'):null;
+        setLang(l?l:(lang==='es'?'en':'es'));
+      }); }
+      if(window.MutationObserver){
+        var pending=false;
+        var mo=new MutationObserver(function(){ if(pending) return; pending=true;
+          setTimeout(function(){ pending=false; var b0=tnodes.length+anodes.length+hnodes.length; scan(document.body); if(tnodes.length+anodes.length+hnodes.length!==b0) apply(); },160); });
+        mo.observe(document.body,{childList:true,subtree:true});
+      } else { setTimeout(function(){ scan(document.body); apply(); },1200); setTimeout(function(){ scan(document.body); apply(); },3000); }
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+  })();
+
+  </script>
 </body>
 </html>
